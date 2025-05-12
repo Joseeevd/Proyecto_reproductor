@@ -35,6 +35,7 @@ fun App() {
     NavHost(navController, startDestination = "home") {
         composable("home") {
             HomeScreen(navController)
+            NavigationBar1(navController = navController)
         }
         composable(
             "video/{videoId}",
@@ -42,6 +43,10 @@ fun App() {
         ) { backStackEntry ->
             val videoId = backStackEntry.arguments?.getInt("videoId") ?: 0
             VideoScreen(videoId = videoId, navController = navController)
+        }
+        composable("galeria"){
+            ArtistsGallery()
+            NavigationBar1(navController = navController)
         }
     }
 }
