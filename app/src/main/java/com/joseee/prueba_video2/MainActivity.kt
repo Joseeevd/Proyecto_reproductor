@@ -66,6 +66,19 @@ fun App() {
             }
 
         }
+
+        composable("audio"){
+            Scaffold (
+                bottomBar = { NavigationBar1(navController, currentRoute = currentRoute) }
+            ) { innerPadding ->
+                AudioListScreen(navController = navController, modifier = Modifier.padding(innerPadding))
+            }
+        }
+
+        composable("audio/{audioIndex}") { backStackEntry ->
+            val index = backStackEntry.arguments?.getString("audioIndex")?.toInt() ?: 0
+            AudioPlayerScreen(audioIndex = index, navController)
+        }
     }
 }
 
