@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ArtistsGallery(navController: NavController) {
+fun ArtistsGallery(navController: NavController, modifier: Modifier = Modifier) {
     val images = listOf(
         R.drawable.ic_launcher_background, // Imagen 1
         R.drawable.ic_launcher_foreground, // Imagen 2

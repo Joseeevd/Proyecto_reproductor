@@ -27,12 +27,12 @@ import androidx.navigation.NavController
 fun VideoScreen(videoId: Int, navController: NavController) {
     val context = LocalContext.current
 
-    val videoTitles = listOf("Video 1", "Video 2", "Video 3", "Video 4")
+    val videoTitles = listOf(
+        "Video 1", "Video 2", "Video 3", "Video 4",
+        "De música ligera - Soda Stereo", "Flaca - Andrés Calamaro", "Lucha de gigantes - Nacha pop")
     val videoResIds = listOf(
-        R.raw.video1,
-        R.raw.video2,
-        R.raw.video3,
-        R.raw.video4
+        R.raw.video1, R.raw.video2, R.raw.video3, R.raw.video4,
+        R.raw.video5, R.raw.video6, R.raw.video7
     )
 
     val videoUri = Uri.parse("android.resource://${context.packageName}/${videoResIds[videoId]}")
